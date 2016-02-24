@@ -1,4 +1,9 @@
 Book.destroy_all
+Genre.destroy_all
+
+fiction = Genre.create!(name: 'Fiction')
+non_fiction = Genre.create!(name: 'Non-Fiction')
+apple = Genre.create!(name: 'Apple')
 
 book = Book.new
 book.title = 'Last Stop on Market Street'
@@ -6,7 +11,8 @@ book.author = 'Christian Robinson'
 book.description = "Every Sunday after church, CJ and his grandma ride the bus across town. But today, CJ wonders why they don't own a car like his friend Colby. Why doesn’t he have an iPod like the boys on the bus? How come they always have to get off in the dirty part of town? Each question is met with an encouraging answer from grandma, who helps him see the beauty—and fun—in their routine and the world around them."
 book.amazon_id = '0399257748'
 book.rating = 5
-finished_on = 10.days.ago
+book.finished_on = 10.days.ago
+book.genres = [fiction, apple]
 book.save
 
 book = Book.new
@@ -19,7 +25,8 @@ So begins a new adventure of Ada, and for Susan Smith, the woman who is forced t
 This masterful work of historical fiction is equal parts adventure and a moving tale of family and identity—a classic in the making."
 book.amazon_id = "0803740816"
 book.rating = 4
-finished_on = 10.days.ago
+book.finished_on = 10.days.ago
+book.genres = [non_fiction]
 book.save
 
 book = Book.new
@@ -30,5 +37,6 @@ book.description = "For most of her twelve years, Astrid has done everything wit
 In this graphic novel debut that earned a Newbery Honor and five starred reviews, real-life derby girl Victoria Jamieson has created an inspiring coming-of-age story about friendship, perseverence, and girl power!"
 book.amazon_id = "0803740166"
 book.rating = 4
-finished_on = 2.days.ago
+book.finished_on = 2.days.ago
+book.genres = [non_fiction, apple]
 book.save
